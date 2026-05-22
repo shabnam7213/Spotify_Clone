@@ -6,7 +6,7 @@ A fully functional Spotify-inspired music streaming web app built with **HTML, C
 
 ## 🖥️ Preview
 
-![Live Site](https://i.imgur.com/placeholder.png)
+![Live Site](jocular-sunflower-764981.netlify.app)
 
 > Dark Spotify-style UI with sidebar navigation, live search, artist pages, and a sticky bottom player.
 
