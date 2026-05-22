@@ -1,6 +1,6 @@
 # 🎵 Spotify Clone
 
-A fully functional Spotify-inspired music streaming web app built with **HTML, CSS, and vanilla JavaScript** — no frameworks, no dependencies. Streams real music live using the **Jamendo API**.
+A fully functional Spotify-inspired music streaming web app built with **HTML, CSS, and vanilla JavaScript** — no frameworks, no dependencies. Streams real music live using the **Rapid API**.
 
 ---
 
@@ -116,7 +116,7 @@ This project uses the **[Jamendo API](https://developer.jamendo.com/v3.0)** — 
 
 ---
 
-## 📄 License
+
 
 This project is for educational purposes only.  
 All music is sourced from Jamendo under Creative Commons licenses.
