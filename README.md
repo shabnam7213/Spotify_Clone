@@ -77,7 +77,9 @@ open index.html
 ```
 spotify-clone/
 │
-├── index.html        # Main app — HTML + CSS + JS in one file
+├── index.html
+|--index.css
+|--index.js  
 └── README.md         # You are here
 ```
 
