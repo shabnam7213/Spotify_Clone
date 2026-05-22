@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify – Your favourite music is here</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="logo">
+      <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      Spotify
+    </div>
+
+    <div class="nav-item active" onclick="goHome()">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Home
+    </div>
+    <div class="nav-item" onclick="goSearch()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Search
+    </div>
+    <div class="nav-item" onclick="goLiked()">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Liked Songs
+    </div>
+
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-heading">Artists</div>
+
+    <div class="artist-item" onclick="loadArtist('Arijit Singh')">
+      <div class="artist-avatar">🎤</div>
+      Arijit Singh
+    </div>
+    <div class="artist-item" onclick="loadArtist('Lata Mangeshkar')">
+      <div class="artist-avatar">🎵</div>
+      Lata Mangeshkar
+    </div>
+    <div class="artist-item" onclick="loadArtist('A.R. Rahman')">
+      <div class="artist-avatar">🎹</div>
+      A.R. Rahman
+    </div>
+    <div class="artist-item" onclick="loadArtist('Kishore Kumar')">
+      <div class="artist-avatar">🎙</div>
+      Kishore Kumar
+    </div>
+    <div class="artist-item" onclick="loadArtist('Shreya Ghoshal')">
+      <div class="artist-avatar">🎶</div>
+      Shreya Ghoshal
+    </div>
+    <div class="artist-item" onclick="loadArtist('Sonu Nigam')">
+      <div class="artist-avatar">🎤</div>
+      Sonu Nigam
+    </div>
+    <div class="artist-item" onclick="loadArtist('Kumar Sanu')">
+      <div class="artist-avatar">🎵</div>
+      Kumar Sanu
+    </div>
+
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-heading">Genres</div>
+    <div class="artist-item" onclick="loadTag('bollywood','Bollywood')">🎬 Bollywood</div>
+    <div class="artist-item" onclick="loadTag('electronic','Electronic')">⚡ Electronic</div>
+    <div class="artist-item" onclick="loadTag('jazz','Jazz')">🎷 Jazz</div>
+    <div class="artist-item" onclick="loadTag('ambient','Ambient')">🌙 Ambient</div>
+    <div class="artist-item" onclick="loadTag('pop','Pop')">🎤 Pop</div>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="nav-arrows">
+        <button class="arrow-btn" onclick="history.back()">
+          <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>
+        </button>
+        <button class="arrow-btn" onclick="history.forward()">
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+        </button>
+      </div>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="searchInput" type="text" placeholder="Search songs, artists, albums…">
+      </div>
+      <div class="user-pill">
+        <div class="user-ava">U</div>
+        User
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content" id="contentArea">
+      <div class="loading"><div class="spinner"></div>Loading music…</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── PLAYER ── -->
+<div class="player">
+
+  <!-- Left: Now playing -->
+  <div class="now-left">
+    <div class="now-thumb-ph" id="nowThumb">🎵</div>
+    <div class="now-text">
+      <div class="now-name" id="nowName">No track playing</div>
+      <div class="now-artist" id="nowArtist">—</div>
+    </div>
+    <button class="heart-btn" id="heartBtn" onclick="toggleLike()">
+      <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+    </button>
+  </div>
+
+  <!-- Center: Controls + progress -->
+  <div class="now-center">
+    <div class="ctrl-row">
+      <button class="ctrl-btn" id="shuffleBtn" onclick="toggleShuffle()" title="Shuffle">
+        <svg viewBox="0 0 24 24"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="ctrl-btn" onclick="prevTrack()" title="Previous">
+        <svg viewBox="0 0 24 24"><path d="M19 20L9 12l10-8v16zM5 19V5"/></svg>
+      </button>
+      <button class="play-btn" id="masterPlay" onclick="togglePlay()">
+        <svg id="playIcon" viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
+      </button>
+      <button class="ctrl-btn" onclick="nextTrack()" title="Next">
+        <svg viewBox="0 0 24 24"><path d="M5 4l10 8-10 8V4zM19 5v14"/></svg>
+      </button>
+      <button class="ctrl-btn" id="repeatBtn" onclick="cycleRepeat()" title="Repeat">
+        <svg viewBox="0 0 24 24"><path d="M17 1l4 4-4 4M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 01-4 4H3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="progress-row">
+      <span class="time" id="curTime">0:00</span>
+      <div class="prog-bar" id="progBar">
+        <div class="prog-fill" id="progFill" style="width:0%"></div>
+        <div class="prog-handle" id="progHandle" style="left:0%"></div>
+      </div>
+      <span class="time" id="totTime">0:00</span>
+    </div>
+  </div>
+
+  <!-- Right: Volume -->
+  <div class="now-right">
+    <button class="vol-btn" onclick="toggleMute()" title="Mute">
+      <svg id="volIcon" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+    </button>
+    <input type="range" class="vol-slider" id="volSlider" min="0" max="100" value="80" oninput="setVolume(this.value)">
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+<audio id="audio" crossorigin="anonymous"></audio>
+<script src="index.js"></script>
+
+</body>
+</html>
