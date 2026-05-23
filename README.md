@@ -6,7 +6,7 @@ A fully functional Spotify-inspired music streaming web app built with **HTML, C
 
 ## 🖥️ Preview
 
-![Live Site](jocular-sunflower-764981.netlify.app)
+![Live Site]([jocular-sunflower-764981.netlify.app](https://jocular-sunflower-764981.netlify.app/))
 
 > Dark Spotify-style UI with sidebar navigation, live search, artist pages, and a sticky bottom player.
 
@@ -68,7 +68,7 @@ open index.html
 | HTML5 | Structure & layout |
 | CSS3 | Styling, animations, responsive design |
 | Vanilla JavaScript | All logic, API calls, DOM manipulation |
-| [Jamendo API](https://developer.jamendo.com/) | Free music streaming |
+| [Rapid API]([https://developer.Rapid.com/](https://rapidapi.com/)) | Free music streaming |
 
 ---
 
@@ -87,7 +87,7 @@ spotify-clone/
 
 ## 🌐 API Used
 
-This project uses the **[Jamendo API](https://developer.jamendo.com/v3.0)** — a free, legal source of Creative Commons licensed music.
+This project uses the **[Rapid API]([https://developer.Rapid.com/v3.0](https://rapidapi.com/))** — a free, legal source of Creative Commons licensed music.
 
 - Free to use with a client ID
 - Supports search by artist name, tag, genre
