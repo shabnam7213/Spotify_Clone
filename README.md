@@ -119,7 +119,7 @@ This project uses the **[Rapid API]([https://developer.Rapid.com/v3.0](https://r
 
 
 This project is for educational purposes only.  
-All music is sourced from Jamendo under Creative Commons licenses.
+All music is sourced from Rapid under Creative Commons licenses.
 
 ---
 
