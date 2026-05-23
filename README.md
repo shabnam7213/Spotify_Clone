@@ -111,7 +111,7 @@ This project uses the **[Rapid API]([https://developer.Rapid.com/v3.0](https://r
 ## 🙌 Acknowledgements
 
 - [Spotify](https://spotify.com) — Design inspiration
-- [Jamendo](https://www.Rapidapi.com) — Free music API
+- [Rapid Api](https://www.Rapidapi.com) — Free music API
 - [Font Awesome](https://fontawesome.com) — Icons
 
 ---
